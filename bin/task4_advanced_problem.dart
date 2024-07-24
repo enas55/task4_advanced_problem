@@ -1,7 +1,9 @@
 void main() {
   List strs = ["flower", "flow", "flight"];
 
-  longestCommonPrefix(strs);
+  var result = longestCommonPrefix(strs);
+
+  print(result);
 }
 
 String longestCommonPrefix(List list) {
@@ -12,10 +14,10 @@ String longestCommonPrefix(List list) {
 
   String firstString = list.first;
   String lastString = list.last;
-  for (int i = 0; i < firstString.length && i < lastString.length;) {
+  for (int i = 0; i < firstString.length && i < lastString.length; i++) {
     if (firstString[i] != lastString[i]) {
       break;
     }
   }
-  return firstString.substring(0, 1);
+  return firstString.substring(0, list.length - 1);
 }
